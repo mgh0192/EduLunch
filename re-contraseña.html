@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restablecer contraseña | EduLunch</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+    
+    <!-- =====================================
+         CSS
+    ====================================== -->
+    <link rel="stylesheet" href="re-contraseña.css">
+
+</head>
+
+
+<body>
+
+    <div class="fondo" id="fondo-principal">
+
+        <!-- =====================================
+             DECORACIONES
+        ====================================== -->
+
+        <div class="decoracion decoracion-1"></div>
+
+        <div class="decoracion decoracion-2"></div>
+
+        <div class="decoracion decoracion-3"></div>
+
+
+        <!-- =====================================
+             TARJETA PRINCIPAL
+        ====================================== -->
+
+        <main class="contenedor">
+
+
+            <!-- =================================
+                 PARTE IZQUIERDA
+            ================================== -->
+
+            <div class="logo">
+
+                <!-- Icono -->
+                <div class="logo-icono">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                </div>
+
+
+                <!-- Logo y frase -->
+                <div class="logo-texto">
+
+                    <h2>
+                        <span class="edu">Edu</span><span class="lunch">Lunch</span>
+                    </h2>
+
+
+                    <h3>
+                        Tu seguridad también<br>
+                        alimenta tu confianza.
+                    </h3>
+
+
+                    <p>
+                        Crea una contraseña segura para proteger
+                        tu cuenta y disfrutar de EduLunch
+                        con tranquilidad.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 PARTE DERECHA
+            ================================== -->
+
+
+            <!-- Icono de seguridad -->
+
+            <div class="icono-seguridad">
+
+                <i class="fa-solid fa-lock"></i>
+
+            </div>
+
+
+
+            <!-- Título -->
+
+            <h1>
+                Restablecer contraseña
+            </h1>
+
+
+
+            <!-- Descripción -->
+
+            <p class="descripcion">
+                Crea una nueva contraseña para tu cuenta.
+                Asegúrate de que sea segura y fácil de recordar.
+            </p>
+
+
+
+            <!-- =================================
+                 FORMULARIO
+            ================================== -->
+
+            <form
+                id="formulario-restablecer"
+                novalidate
+            >
+
+
+                <!-- =================================
+                     NUEVA CONTRASEÑA
+                ================================== -->
+
+                <div class="grupo-campo">
+
+                    <label for="nueva-contrasena">
+                        Introduce tu nueva contraseña
+                    </label>
+
+
+                    <div class="campo-contrasena">
+
+                        <input
+                            type="password"
+                            id="nueva-contrasena"
+                            name="nueva-contrasena"
+                            placeholder="Ingresa tu nueva contraseña"
+                            autocomplete="new-password"
+                            aria-describedby="requisitos"
+                        >
+
+
+                        <!-- Botón mostrar/ocultar -->
+
+                        <button
+                            type="button"
+                            class="boton-ojo"
+                            data-target="nueva-contrasena"
+                            aria-label="Mostrar contraseña"
+                            aria-pressed="false"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         REQUISITOS DE CONTRASEÑA
+
+                         OCULTOS AL INICIO
+                    ================================== -->
+
+                    <div
+                        class="requisitos"
+                        id="requisitos"
+                    >
+
+                        <p class="titulo-requisitos">
+                            Tu contraseña debe contener:
+                        </p>
+
+
+                        <ul>
+
+
+                            <!-- Mínimo 8 caracteres -->
+
+                            <li id="req-longitud">
+
+                                <i class="fa-regular fa-circle"></i>
+
+                                <span>
+                                    Mínimo 8 caracteres.
+                                </span>
+
+                            </li>
+
+
+                            <!-- Mayúscula -->
+
+                            <li id="req-mayuscula">
+
+                                <i class="fa-regular fa-circle"></i>
+
+                                <span>
+                                    Una letra mayúscula.
+                                </span>
+
+                            </li>
+
+
+                            <!-- Minúscula -->
+
+                            <li id="req-minuscula">
+
+                                <i class="fa-regular fa-circle"></i>
+
+                                <span>
+                                    Una letra minúscula.
+                                </span>
+
+                            </li>
+
+
+                            <!-- Número -->
+
+                            <li id="req-numero">
+
+                                <i class="fa-regular fa-circle"></i>
+
+                                <span>
+                                    Un número.
+                                </span>
+
+                            </li>
+
+
+                            <!-- Símbolo -->
+
+                            <li id="req-simbolo">
+
+                                <i class="fa-regular fa-circle"></i>
+
+                                <span>
+                                    Un símbolo especial.
+                                </span>
+
+                            </li>
+
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- Mensaje de error -->
+
+                    <small
+                        class="mensaje-error"
+                        id="error-nueva"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CONFIRMAR CONTRASEÑA
+                ================================== -->
+
+                <div class="grupo-campo">
+
+                    <label for="confirmar-contrasena">
+                        Confirma tu nueva contraseña
+                    </label>
+
+
+                    <div class="campo-contrasena">
+
+                        <input
+                            type="password"
+                            id="confirmar-contrasena"
+                            name="confirmar-contrasena"
+                            placeholder="Vuelve a escribir tu contraseña"
+                            autocomplete="new-password"
+                        >
+
+
+                        <!-- Botón mostrar/ocultar -->
+
+                        <button
+                            type="button"
+                            class="boton-ojo"
+                            data-target="confirmar-contrasena"
+                            aria-label="Mostrar contraseña"
+                            aria-pressed="false"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Mensaje de error -->
+
+                    <small
+                        class="mensaje-error"
+                        id="error-confirmar"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- =================================
+                     MENSAJE GENERAL
+                ================================== -->
+
+                <div
+                    id="mensaje-general"
+                    class="mensaje-general"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- =================================
+                     BOTÓN RESTABLECER
+                ================================== -->
+
+                <button
+                    type="submit"
+                    class="boton-restablecer"
+                >
+
+                    <span>
+                        Restablecer contraseña
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =================================
+                 VOLVER AL INICIO
+            ================================== -->
+
+            <a
+                href="index.html"
+                class="volver"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>
+                    Volver al inicio
+                </span>
+
+            </a>
+
+
+        </main>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer>
+            © 2026 EduLunch | Cafetería Escolar
+        </footer>
+
+
+    </div>
+
+
+    <!-- =====================================
+         OVERLAY - INGRESAR CÓDIGO
+
+         Aparece por ENCIMA de la página
+         (no es otra página, es un modal)
+    ====================================== -->
+
+    <div
+        class="overlay-codigo"
+        id="overlay-codigo"
+    >
+
+        <div class="modal-codigo">
+
+            <div class="modal-codigo-icono">
+                <i class="fa-solid fa-key"></i>
+            </div>
+
+            <h2>
+                Ingrese el código
+            </h2>
+
+            <p>
+                Te enviamos un código de verificación.
+                Ingrésalo para continuar.
+            </p>
+
+            <div class="campo-codigo">
+
+                <input
+                    type="text"
+                    id="input-codigo"
+                    placeholder="Ej: 123456"
+                    maxlength="6"
+                    inputmode="numeric"
+                    autocomplete="one-time-code"
+                >
+
+            </div>
+
+            <small
+                class="mensaje-error"
+                id="error-codigo"
+            ></small>
+
+            <button
+                type="button"
+                class="boton-verificar-codigo"
+                id="boton-verificar-codigo"
+            >
+
+                <span>
+                    Verificar código
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="re-contraseña.js"></script>
+
+</body>
+
+</html>

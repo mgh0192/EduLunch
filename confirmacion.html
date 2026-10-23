@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduLunch - Pedido confirmado</title>
+  <link rel="stylesheet" href="confirmacion.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* Fotos del resumen del pedido (aquí mismo para que siempre se apliquen) */
+    .producto-resumen { display: flex; align-items: center; gap: 14px; }
+    .producto-resumen-imagen {
+      width: 56px; height: 56px; flex-shrink: 0;
+      border-radius: 10px; overflow: hidden; background: #f4f8fa;
+      display: flex; align-items: center; justify-content: center; color: #9db3bd;
+    }
+    .producto-resumen-imagen img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .producto-resumen-info { flex: 1; }
+  </style>
+</head>
+<body>
+  <main class="confirmacion-pagina">
+    <section class="confirmacion-card">
+      <div class="icono-exito"><i class="fa-solid fa-check"></i></div>
+      <h1>¡Pedido confirmado!</h1>
+      <p class="mensaje">Tu pedido fue recibido correctamente. ¡Gracias por comprar en EduLunch! 💙</p>
+
+      <div class="numero-pedido">
+        <span>Número de pedido</span>
+        <strong id="numeroPedido">#000000</strong>
+      </div>
+
+      <div class="numero-pedido" id="bloqueTurno">
+        <span>Tu turno</span>
+        <strong id="numeroTurno">--</strong>
+      </div>
+
+      <div class="resumen-pedido">
+        <h2>Resumen de tu pedido</h2>
+        <div id="resumenProductos"></div>
+        <div class="total-final">
+          <span>Total</span>
+          <strong id="totalFinal">$0</strong>
+        </div>
+      </div>
+
+      <div class="pago-final">
+<h3>💳 Información del pago</h3>
+<p><strong>Método:</strong> <span id="metodoPagoFinal">—</span></p>
+<p><strong>Estado:</strong> <span id="estadoPagoFinal">—</span></p>
+</div>
+
+      <div class="acciones">
+        <a href="menu.html" class="btn-principal">Volver al menú</a>
+        <a href="perfil.html" class="btn-secundario">Ver mi perfil</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pedido = JSON.parse(localStorage.getItem("edulunchUltimoPedido") || "null");
+
+      if (!pedido) {
+        window.location.href = "menu.html";
+        return;
+      }
+
+      document.getElementById("numeroPedido").textContent = pedido.numero;
+
+      const bloqueTurno = document.getElementById("bloqueTurno");
+      if (pedido.turno) {
+        document.getElementById("numeroTurno").textContent = pedido.turno;
+      } else if (bloqueTurno) {
+        bloqueTurno.style.display = "none";
+      }
+
+      document.getElementById("totalFinal").textContent = "$" + Number(pedido.total).toLocaleString("es-CO");
+      document.getElementById("metodoPagoFinal").textContent = pedido.metodoPago === "transferencia" ? "Transferencia" : "Efectivo";
+      document.getElementById("estadoPagoFinal").textContent = pedido.estadoPago || "Pendiente de verificación";
+
+      document.getElementById("resumenProductos").innerHTML = pedido.productos.map(item => `
+        <div class="producto-resumen">
+          <div class="producto-resumen-imagen">
+            ${item.imagen
+              ? `<img src="${escapeHtml(item.imagen)}" alt="${escapeHtml(item.nombre)}" onerror="this.parentElement.innerHTML='<i class=&quot;fa-solid fa-utensils&quot;></i>'">`
+              : `<i class="fa-solid fa-utensils"></i>`
+            }
+          </div>
+          <span class="producto-resumen-info">${escapeHtml(item.nombre)} <small>x${item.cantidad}</small></span>
+          <strong>$${(Number(item.precio) * Number(item.cantidad)).toLocaleString("es-CO")}</strong>
+        </div>
+      `).join("");
+    });
+
+    function escapeHtml(valor) {
+      return String(valor).replace(/[&<>\"]/g, caracter => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"
+      }[caracter]));
+    }
+  </script>
+</body>
+</html>

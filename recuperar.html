@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Restablecer contraseña - EDULUNCH</title>
+
+    <link rel="stylesheet" href="recuperar.css">
+
+</head>
+
+
+<body>
+
+    <main class="recuperar-pagina">
+
+        <section class="recuperar-contenedor">
+
+
+            <!-- PARTE IZQUIERDA -->
+
+            <div class="recuperar-info">
+
+                <div class="icono-principal">
+                    🔐
+                </div>
+
+                <h1>
+                    EDU<span>LUNCH</span>
+                </h1>
+
+                <h2>
+                    ¿Olvidaste tu contraseña?
+                </h2>
+
+                <p>
+                    No te preocupes. Puedes restablecer
+                    tu contraseña ingresando el correo
+                    institucional de tu cuenta.
+                </p>
+
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <div class="formulario-recuperar">
+
+                <div class="titulo">
+
+                    <div class="icono-correo">
+                        ✉
+                    </div>
+
+                    <div>
+                        <h2>
+                            Restablecer contraseña
+                        </h2>
+
+                        <p>
+                            Ingresa tu correo institucional
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="formularioRecuperar">
+
+
+                    <div class="campo-recuperar">
+
+                        <label for="correoRecuperar">
+                            Correo institucional
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correoRecuperar"
+                            placeholder="Ingresa tu correo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-restablecer"
+                    >
+
+                        Enviar solicitud →
+
+                    </button>
+
+
+                </form>
+
+
+                <div class="volver-login">
+
+                    <a href="login.html">
+                        ← Volver a iniciar sesión
+                    </a>
+
+                </div>
+
+
+                <p class="seguridad">
+                    🔒 Tus datos están protegidos
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="auth.js"></script>
+    <script src="recuperar.js"></script>
+
+</body>
+
+</html>

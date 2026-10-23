@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="campana">
+    <button type="button" class="campana-btn" aria-label="Notificaciones">
+        <span class="campana-icono">
+            <!-- Campana dibujada (no necesita internet ni Font Awesome) -->
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5v.7A6.5 6.5 0 0 1 18.5 10.5v3.6l1.7 2.6c.5.8 0 1.8-1 1.8H4.8c-1 0-1.5-1-1-1.8l1.7-2.6v-3.6A6.5 6.5 0 0 1 10.5 4.2v-.7A1.5 1.5 0 0 1 12 2Zm0 20a2.8 2.8 0 0 1-2.7-2h5.4A2.8 2.8 0 0 1 12 22Z"/>
+            </svg>
+        </span>
+        <span class="campana-num">0</span>
+    </button>
+
+    <div class="campana-panel">
+        <div class="campana-cab">
+            Notificaciones
+            <button type="button" class="marcar-todas">Marcar todas como leídas</button>
+        </div>
+        <div class="campana-lista"></div>
+    </div>
+</div>

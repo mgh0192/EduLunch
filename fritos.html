@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduLunch - Frutas y Helados</title>
+
+    <link rel="stylesheet" href="fritos.css">
+    <link rel="stylesheet" href="campana.css">
+</head>
+
+<body>
+
+<div class="pagina">
+
+    <!-- ENCABEZADO -->
+    <header>
+
+        <div class="logo">
+            Edu<span>Lunch</span>
+        </div>
+
+        <nav>
+            <a href="menu.html">Inicio</a>
+            <a href="fritos.html" class="activo">Fritos</a>
+            <a href="snacks.html">Snacks</a>
+            <a href="bebidas.html">Bebidas</a>
+            <a href="HeladosFR.html">Frutas y Helados</a>
+        </nav>
+
+        <div class="iconos">
+
+            <a class="icono carrito" href="carrito.html" aria-label="Carrito">🛒︎<div class="numero contador-carrito">0</div></a>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <a href="menu.html" class="volver">
+            <span class="flecha">←</span>
+            Volver al menú
+        </a>
+
+        <h1>
+            Fritos
+        </h1>
+
+        <p>
+            Variedad de fritos, crocantes y preparados
+            para disfrutar en cualquier momento.
+        </p>
+
+        <div class="linea"></div>
+
+        <img
+            src="img/fritos logo.png"
+            class="helados-hero"
+            alt="Fritos"
+        >
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+    <section class="productos">
+
+        <div class="grid-productos" id="grid-productos-bd" data-categoria="1">
+            <p class="cargando-productos">Cargando productos…</p>
+        </div>
+
+    </section>
+
+
+    <footer>
+        © 2026 EduLunch · Tienda Escolar
+    </footer>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="campana.js"></script>
+<script src="tienda.js"></script>
+</body>
+</html>

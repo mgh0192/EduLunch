@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: monserrat, sans-serif;
+}
+
+
+/* =========================
+   FONDO GENERAL
+========================= */
+
+.recuperar-pagina {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #e8f7fc,
+        #fff8ed
+    );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.recuperar-contenedor {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    min-height: 570px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   PARTE IZQUIERDA
+========================= */
+
+.recuperar-info {
+
+    background: linear-gradient(
+        160deg,
+        #247ba5,
+        #15506d
+    );
+
+    color: white;
+
+    padding: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* ICONO */
+
+.icono-principal {
+
+    width: 95px;
+
+    height: 95px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 45px;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO */
+
+.recuperar-info h1 {
+
+    font-family: monserrat, sans-serif;
+
+    font-size: 45px;
+
+    font-weight: 700;
+}
+
+
+.recuperar-info h1 span {
+
+    color: #f3a832;
+}
+
+
+/* TÍTULO */
+
+.recuperar-info h2 {
+
+    margin-top: 30px;
+
+    font-size: 27px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.recuperar-info p {
+
+    max-width: 330px;
+
+    margin-top: 15px;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* DECORACIÓN */
+
+.decoracion {
+
+    margin-top: 35px;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   PARTE DERECHA
+========================= */
+
+.formulario-recuperar {
+
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ICONO CORREO */
+
+.icono-correo {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #247ba5;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 25px;
+}
+
+
+.titulo h2 {
+
+    color: #154d69;
+
+    font-size: 25px;
+}
+
+
+.titulo p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   CAMPO
+========================= */
+
+.campo-recuperar {
+
+    margin-bottom: 20px;
+}
+
+
+.campo-recuperar label {
+
+    display: block;
+
+    color: #154d69;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.campo-recuperar input {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: 2px solid #dedede;
+
+    border-radius: 11px;
+
+    padding: 0 15px;
+
+    font-family: monserrat, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.campo-recuperar input:focus {
+
+    border-color: #247ba5;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 123, 165, 0.1);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.btn-restablecer {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #247ba5;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.btn-restablecer:hover {
+
+    background: #17688f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   VOLVER AL LOGIN
+========================= */
+
+.volver-login {
+
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+.volver-login a {
+
+    color: #247ba5;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.volver-login a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SEGURIDAD
+========================= */
+
+.seguridad {
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .recuperar-contenedor {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .recuperar-info {
+
+        padding: 35px 25px;
+    }
+
+
+    .formulario-recuperar {
+
+        padding: 40px 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .recuperar-pagina {
+
+        padding: 15px;
+    }
+
+
+    .formulario-recuperar {
+
+        padding: 30px 20px;
+    }
+
+}

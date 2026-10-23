@@ -1,0 +1,1138 @@
+/* =========================================
+   EDULUNCH - RESTABLECER CONTRASEÑA
+========================================= */
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-300-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.8/files/montserrat-latin-800-normal.woff2') format('woff2');
+}
+
+
+:root {
+    --azul: #287FA6;
+    --azul-oscuro: #15577A;
+    --azul-panel: #237BA0;
+    --naranja: #F9A51A;
+
+    --blanco: #FFFFFF;
+
+    --gris-texto: #71818A;
+    --borde: #D8D8D8;
+
+    --verde: #35A56A;
+    --rojo: #D9534F;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #EAF8FC 0%,
+            #F5FCFD 50%,
+            #FFFDF8 100%
+        );
+
+    color: var(--azul-oscuro);
+}
+
+
+/* =========================================
+   FONDO
+========================================= */
+
+.fondo {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px;
+
+    position: relative;
+
+    /* Transición suave del desenfoque */
+    transition: filter 0.35s ease;
+}
+
+
+/* Estado borroso mientras se pide el código */
+.fondo.difuminado {
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    user-select: none;
+
+}
+
+
+/* =========================================
+   OVERLAY - INGRESAR CÓDIGO
+========================================= */
+
+.overlay-codigo {
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(21, 87, 122, 0.35);
+
+    backdrop-filter: blur(2px);
+
+    z-index: 1000;
+
+    opacity: 1;
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+/* Cuando el código ya fue verificado */
+.overlay-codigo.oculto {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    visibility: hidden;
+
+}
+
+
+.modal-codigo {
+
+    width: 100%;
+    max-width: 380px;
+
+    background: var(--blanco);
+
+    border-radius: 24px;
+
+    padding: 36px 32px;
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 45px rgba(31, 87, 110, 0.25);
+
+    animation: aparecer-modal 0.35s ease;
+
+}
+
+
+@keyframes aparecer-modal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-14px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+.modal-codigo-icono {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--azul) 0%,
+        var(--azul-oscuro) 100%
+    );
+
+    color: var(--blanco);
+
+    font-size: 22px;
+
+}
+
+
+.modal-codigo h2 {
+
+    color: var(--azul-oscuro);
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.modal-codigo p {
+
+    color: var(--gris-texto);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+
+}
+
+
+.campo-codigo input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 2px solid var(--borde);
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    letter-spacing: 4px;
+
+    color: var(--azul-oscuro);
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+
+}
+
+
+.campo-codigo input:focus {
+
+    border-color: var(--azul);
+
+}
+
+
+.campo-codigo input.invalido {
+
+    border-color: var(--rojo);
+
+}
+
+
+#error-codigo {
+
+    display: block;
+
+    min-height: 18px;
+
+    margin: 8px 0 6px;
+
+    color: var(--rojo);
+
+    font-size: 13px;
+
+}
+
+
+.boton-verificar-codigo {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--azul);
+
+    color: var(--blanco);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+
+}
+
+
+.boton-verificar-codigo:hover {
+
+    background: var(--azul-oscuro);
+
+}
+
+
+.boton-verificar-codigo:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+
+    min-height: 600px;
+
+    display: grid;
+
+    grid-template-columns: 43% 57%;
+
+    background: white;
+
+    border-radius: 30px;
+    
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 45px rgba(31, 87, 110, 0.15);
+
+    position: relative;
+
+    animation: aparecer 0.5s ease;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PANEL AZUL
+========================================= */
+
+.contenedor::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 43%;
+
+    background: #15577A;
+}
+
+
+/* =========================================
+   CONTENIDO IZQUIERDO
+========================================= */
+
+.logo {
+
+    position: absolute;
+
+    left: 0;
+    top: 58px;
+
+    width: 43%;
+
+    padding: 0 45px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   ICONO
+========================================= */
+
+.logo-icono {
+
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.17);
+
+    color: white;
+
+    font-size: 32px;
+}
+
+
+/* =========================================
+   LOGO EDULUNCH
+========================================= */
+
+.logo-texto h2 {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 32px;
+}
+
+.logo-texto .edu {
+    color: #FFFFFF;
+}
+
+.logo-texto .lunch {
+    color: var(--naranja);
+}
+
+
+/* =========================================
+   FRASE IZQUIERDA
+========================================= */
+
+.logo-texto h3 {
+
+    color: white;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    font-weight: 750;
+
+    margin-bottom: 15px;
+}
+
+.logo-texto p {
+
+    color:
+        rgba(242, 229, 229, 0.92);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 280px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   COMIDA
+========================================= */
+
+
+
+
+/* =========================================
+   ICONO DEL FORMULARIO
+========================================= */
+
+.icono-seguridad {
+
+    grid-column: 2;
+
+    width: 64px;
+    height: 64px;
+
+    margin-left: 55px;
+    margin-top: 68px;
+
+    margin-bottom: -64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    color: white;
+
+    font-size: 25px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+h1 {
+
+    grid-column: 2;
+
+    margin-left: 135px;
+
+    margin-top: 73px;
+
+    margin-bottom: 4px;
+
+    color: var(--azul-oscuro);
+
+    font-size: 29px;
+
+    font-weight: 750;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.descripcion {
+
+    text-align: center;
+    /* transform: translateX(-10px); */
+
+    grid-column: 2; 
+
+    margin-left: 135px;
+
+    margin-bottom: 27px;
+
+    color: var(--white-texto);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    max-width: 50%;
+    border-color: red solid 10px;
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+form {
+
+    grid-column: 2;
+
+    width: calc(100% - 110px);
+
+    margin-left: 55px;
+}
+
+
+/* =========================================
+   GRUPOS
+========================================= */
+
+.grupo-campo {
+
+    margin-bottom: 17px;
+}
+
+.grupo-campo label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--azul-oscuro);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.campo-contrasena {
+
+    width: 100%;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: 2px solid var(--borde);
+
+    border-radius: 11px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+.campo-contrasena:hover {
+
+    border-color: #BFCED4;
+}
+
+.campo-contrasena:focus-within {
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px rgba(40, 127, 166, 0.09);
+}
+
+.campo-contrasena input {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 12px 15px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #53636C;
+
+    font-size: 13px;
+}
+
+.campo-contrasena input::placeholder {
+
+    color: #9AA5AB;
+}
+
+
+/* =========================================
+   OJO
+========================================= */
+
+.boton-ojo {
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #7D929D;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+.boton-ojo:hover {
+
+    color: var(--azul);
+
+    transform: scale(1.08);
+}
+
+.boton-ojo:focus {
+
+    outline: none;
+}
+
+
+/* =========================================
+   REQUISITOS
+   OCULTOS AL INICIO
+========================================= */
+
+.requisitos {
+
+    display: none;
+
+    margin-top: 9px;
+
+    padding: 10px 13px;
+
+    background: #F5FBFD;
+
+    border: 1px solid #DDEFF5;
+
+    border-radius: 9px;
+
+    animation: aparecerRequisitos 0.2s ease;
+}
+
+
+/* Cuando se active */
+
+.requisitos.mostrar {
+
+    display: block;
+}
+
+
+@keyframes aparecerRequisitos {
+
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TÍTULO REQUISITOS
+========================================= */
+
+.titulo-requisitos {
+
+    margin-bottom: 7px;
+
+    color: var(--azul);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LISTA REQUISITOS
+========================================= */
+
+.requisitos ul {
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+}
+
+.requisitos li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #7B8990;
+
+    font-size: 10px;
+}
+
+.requisitos li i {
+
+    color: #B9C5CA;
+
+    font-size: 10px;
+}
+
+.requisitos li.cumplido {
+
+    color: var(--verde);
+}
+
+.requisitos li.cumplido i {
+
+    color: var(--verde);
+}
+
+
+/* =========================================
+   ERRORES
+========================================= */
+
+.mensaje-error {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--rojo);
+
+    font-size: 10px;
+}
+
+.mensaje-error:empty {
+
+    display: none;
+}
+
+.campo-contrasena.invalido {
+
+    border-color: var(--rojo);
+}
+
+.campo-contrasena.valido {
+
+    border-color: var(--verde);
+}
+
+
+/* =========================================
+   MENSAJE GENERAL
+========================================= */
+
+.mensaje-general {
+
+    display: none;
+
+    padding: 9px 12px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+.mensaje-general.error {
+
+    display: block;
+
+    color: #A83D38;
+
+    background: #FFF0EE;
+
+    border: 1px solid #F2D0CC;
+}
+
+.mensaje-general.exito {
+
+    display: block;
+
+    color: #27764A;
+
+    background: #EDF9F1;
+
+    border: 1px solid #CBE8D5;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.boton-restablecer {
+
+    width: 100%;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: var(--azul);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 5px 12px rgba(40, 127, 166, 0.18);
+}
+
+.boton-restablecer:hover {
+
+    background: #216F91;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   VOLVER AL INICIO
+========================================= */
+
+.volver {
+
+    grid-column: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    margin-top: 24px;
+
+    padding: 10px 0 20px;
+
+    color: var(--azul);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    transition: 0.2s;
+}
+
+.volver:hover {
+
+    color: var(--naranja);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    display: none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .contenedor {
+
+        max-width: 500px;
+
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+    .contenedor::before {
+        display: none;
+    }
+
+    .logo {
+
+        position: relative;
+
+        width: 100%;
+
+        left: auto;
+        top: auto;
+
+        padding: 0;
+
+        margin-bottom: 25px;
+    }
+
+    .logo-texto h2 {
+
+        font-size: 40px;
+    }
+
+    .logo-texto h3 {
+
+        font-size: 19px;
+    }
+
+    .icono-seguridad {
+
+        grid-column: 1;
+
+        margin: 0 auto 15px;
+    }
+
+    h1 {
+
+        grid-column: 1;
+
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .descripcion {
+
+        grid-column: 1;
+
+        margin: 8px auto 25px;
+
+        text-align: center;
+    }
+
+    form {
+
+        grid-column: 1;
+
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .volver {
+
+        grid-column: 1;
+    }
+
+    .fondo::after {
+
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .fondo {
+        padding: 12px;
+    }
+
+    .contenedor {
+        padding: 25px 20px;
+
+        border-radius: 22px;
+    }
+
+    .requisitos ul {
+        grid-template-columns: 1fr;
+    }
+}

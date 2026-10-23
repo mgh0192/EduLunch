@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administrador | EDULUNCH</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header class="barra">
+    <div class="marca">🛡️ EduLunch <small>ADMIN</small></div>
+
+    <nav class="menu-admin" role="tablist">
+        <button class="tab activa" data-tab="productos" type="button"><i class="fa-solid fa-box-open"></i> Productos</button>
+        <button class="tab" data-tab="usuarios" type="button"><i class="fa-solid fa-users"></i> Usuarios</button>
+        <button class="tab" data-tab="pedidos" type="button"><i class="fa-solid fa-receipt"></i> Pedidos <span class="burbuja" id="burbujaPedidos" hidden>0</span></button>
+    </nav>
+
+    <button id="btnSalir" class="btn-salir" type="button"><i class="fa-solid fa-right-from-bracket"></i> Salir</button>
+</header>
+
+<main class="contenido">
+
+    <!-- ================= PRODUCTOS ================= -->
+    <section class="panel activa" id="tab-productos">
+        <div id="listaProductos"><p class="vacio">Cargando productos…</p></div>
+
+        <div class="agregar-bloque" id="bloqueAgregar">
+            <button class="btn-mas" id="btnAbrirAgregar" type="button"><i class="fa-solid fa-plus"></i> Agregar producto</button>
+
+            <form id="formAgregar" class="form-agregar" hidden>
+                <h3>Nuevo producto</h3>
+                <label>Categoría <select id="nuevaCategoria" required></select></label>
+                <label>Nombre <input id="nuevoNombre" type="text" maxlength="100" required></label>
+                <label>Precio (COP) <input id="nuevoPrecio" type="number" min="100" step="100" required></label>
+                <label>Descripción <textarea id="nuevaDescripcion" rows="2" maxlength="255"></textarea></label>
+                <label>Imagen <input id="nuevaImagen" type="file" accept="image/*"></label>
+                <div class="acciones">
+                    <button class="btn-primario" type="submit">Guardar producto</button>
+                    <button class="btn-gris" type="button" id="btnCancelarAgregar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= USUARIOS ================= -->
+    <section class="panel" id="tab-usuarios">
+        <div class="cabecera-panel">
+            <h2>Usuarios registrados <span class="conteo" id="conteoUsuarios"></span></h2>
+            <input id="buscarUsuario" class="buscador" type="search" placeholder="Buscar por nombre o correo…">
+        </div>
+        <div class="tabla-caja">
+            <table class="tabla">
+                <thead><tr><th>Nombre</th><th>Correo</th><th>Tipo</th><th>Grado</th><th>Pedidos</th><th>Registro</th></tr></thead>
+                <tbody id="cuerpoUsuarios"></tbody>
+            </table>
+            <p class="vacio" id="usuariosVacio" hidden>No hay usuarios.</p>
+        </div>
+    </section>
+
+    <!-- ================= PEDIDOS ================= -->
+    <section class="panel" id="tab-pedidos">
+        <div class="cabecera-panel">
+            <h2>Pedidos</h2>
+            <div class="chips" id="filtrosPedidos">
+                <button class="chip activa" data-filtro="pendiente" type="button">Pendientes</button>
+                <button class="chip" data-filtro="listo" type="button">Listos</button>
+                <button class="chip" data-filtro="todos" type="button">Todos</button>
+            </div>
+        </div>
+        <div id="listaPedidos"><p class="vacio">Cargando pedidos…</p></div>
+    </section>
+
+</main>
+
+<div class="aviso" id="aviso" hidden></div>
+
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

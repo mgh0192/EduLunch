@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mis pedidos | EDULUNCH</title>
+
+    <link rel="stylesheet" href="mis-pedidos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="campana.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Edu<span>Lunch</span>
+        </div>
+
+        <nav>
+
+            <a href="menu.html">Inicio</a>
+
+            <a href="menu.html#categorias">Productos</a>
+
+            <a href="carrito.html">Mis pedidos</a>
+
+        </nav>
+
+        <div class="usuario-menu">
+
+            <span class="avatar-pequeno">
+                옷
+            </span>
+
+            <span id="nombreNavbar">
+                Usuario
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="pedidos-pagina">
+
+        <div class="pedidos-header">
+
+            <div>
+                <a href="perfil.html" class="volver-perfil">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a mi perfil
+                </a>
+                <h1>Mis pedidos</h1>
+                <p>Aquí queda guardado cada pedido que haces en EduLunch, con foto, nombre y precio de cada producto.</p>
+            </div>
+
+        </div>
+
+        <div id="estadoCarga" class="estado-carga">
+            Cargando tus pedidos...
+        </div>
+
+        <div id="listaPedidos" class="lista-pedidos"></div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Edu<span>Lunch</span>
+        </div>
+
+        <p>
+            Cafetería escolar fácil, rápida y deliciosa.
+        </p>
+
+        <small>
+            © 2026 EDU LUNCH
+        </small>
+
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="campana.js"></script>
+    <script src="mis-pedidos.js"></script>
+
+</body>
+
+</html>

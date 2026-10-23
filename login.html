@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cafetería I.E. Jesús Rey</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="inicio">
+
+        <section class="contenido">
+
+            <div class="institucion">
+
+                <h3>EDULUNCH</h3>
+
+                <div class="decoracion">
+                    ───────── ☕ ─────────
+                </div>
+
+            </div>
+
+
+            <h1>
+                ¡Bienvenido a<br>
+                nuestra<br>
+                <span>Cafetería!</span>
+            </h1>
+
+
+            <p class="descripcion">
+                Disfruta de nuestros productos favoritos
+                <br>
+                de una manera rápida, fácil y deliciosa.
+            </p>
+
+
+            <!-- =========================
+                 INICIAR SESIÓN
+            ========================== -->
+  <h2> 
+                    Iniciar sesión   
+                </h2>
+            <form class="login" id="formularioLogin">
+
+                              <!-- CORREO -->
+
+                <div class="campo">
+
+                    <span class="icono">✉</span>
+
+                    <input
+                        type="email"
+                        id="loginCorreo"
+                        placeholder="Correo institucional"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="campo">
+
+                    <span class="icono">🔒︎</span>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Contraseña"
+                        required
+                    >
+
+                    <span
+                        class="ojo"
+                        id="mostrarPassword"
+                        title="Mostrar contraseña"
+                    >
+                        ◉
+                    </span>
+
+                </div>
+
+
+                <!-- OLVIDASTE TU CONTRASEÑA -->
+
+                <div class="recuperar">
+
+                    <a href="recuperar.html">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+
+                <!-- BOTÓN INICIAR SESIÓN -->
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+
+                    <span>→</span>
+
+                    Iniciar sesión
+
+                </button>
+
+
+
+                <!-- SEGURIDAD -->
+
+                <p class="seguridad">
+                    🔒 Tus datos están protegidos
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="auth.js"></script>
+    <script src="registro.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f5f1;
+    color: #123f5c;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.pagina {
+    width: 96%;
+    max-width: 1200px;
+    margin: 15px auto;
+    background: #fffdfb;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: #fffdfb;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-family: monserrat, sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #24475c;
+}
+
+.logo span {
+    color: #4e8798;
+}
+
+
+/* MENÚ */
+
+nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #123f5c;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.activo {
+    border-bottom: 2px solid #164b6b;
+}
+
+
+/* ICONOS */
+
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icono {
+    font-size: 28px;
+    color: #164b6b;
+    cursor: pointer;
+}
+
+.carrito {
+    position: relative;
+}
+
+.numero {
+    position: absolute;
+    top: -9px;
+    right: -12px;
+    background: #164b6b;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 400px;
+    padding: 55px 45px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        110deg,
+        #fffdfb 10%,
+        #76b5cf 60%
+    );
+}
+
+
+/* VOLVER */
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #164b6b;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.flecha {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* TÍTULO */
+
+.hero h1 {
+    font-family: monserrat, sans-serif;
+    font-size: 65px;
+    color: #164b6b;
+    margin-bottom: 15px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 370px;
+    color: #164b6b;
+}
+
+
+/* LÍNEA */
+
+.linea {
+    width: 60px;
+    height: 4px;
+    background: #3d91a9;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
+/* IMAGEN DEL HERO */
+
+.bebidas-hero {
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+    width: 58%;
+    max-width: 700px;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    padding: 35px 35px 50px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+/* TARJETA */
+
+.producto {
+    background: #fffaf6;
+    border-radius: 15px;
+    padding: 12px;
+    min-height: 290px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 3px 10px rgba(20, 70, 90, 0.07);
+
+    transition: 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(20, 70, 90, 0.13);
+}
+
+
+/* IMAGEN */
+
+.imagen-producto {
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf6;
+    border-radius: 12px;
+}
+
+.imagen-producto img {
+    max-height: 150px;
+    max-width: 120px;
+    object-fit: contain;
+}
+
+
+/* NOMBRE */
+
+.producto h3 {
+    font-family: monserrat, sans-serif;
+    color: #164b6b;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.producto p {
+    color: #174a64;
+    font-size: 15px;
+    line-height: 1.35;
+    margin-top: 10px;
+    min-height: 35px;
+}
+
+
+/* PRECIO + BOTÓN */
+
+.parte-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.precio {
+    font-size: 19px;
+    font-weight: bold;
+    color: #164b6b;
+}
+
+
+/* BOTÓN + */
+
+.btn-agregar {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #267795;
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-agregar:hover {
+    background: #164b6b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    height: 60px;
+
+    border-top: 1px solid #e6e1dc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #164b6b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bebidas-hero {
+        opacity: 0.35;
+        right: 0;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+        height: auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 35px 25px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .bebidas-hero {
+        display: none;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .productos {
+        padding: 25px;
+    }
+}
+

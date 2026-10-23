@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5fafc;
+    color: #154d69;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+    padding: 0 7%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-family: monserrat, sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #24475c;
+}
+
+.logo span {
+    color: #4e8798;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #344d59;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: #4e8798;
+}
+
+.usuario-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.avatar-pequeno {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e5f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.pedidos-pagina {
+    max-width: 950px;
+    margin: auto;
+    padding: 45px 25px 65px;
+}
+
+.volver-perfil {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #4e8798;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.volver-perfil:hover {
+    color: #164b6b;
+}
+
+.pedidos-header h1 {
+    font-family: monserrat, sans-serif;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.pedidos-header p {
+    color: #587080;
+    font-size: 16px;
+}
+
+.estado-carga {
+    margin-top: 30px;
+    padding: 40px;
+    text-align: center;
+    color: #587080;
+}
+
+/* =========================
+   LISTA DE PEDIDOS
+========================= */
+
+.lista-pedidos {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.pedido-vacio {
+    text-align: center;
+    padding: 50px;
+    border: 1px dashed #b7cbd3;
+    border-radius: 18px;
+    line-height: 2;
+    color: #587080;
+}
+
+.pedido-vacio a {
+    color: #164b6b;
+    font-weight: bold;
+}
+
+.tarjeta-pedido {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.tarjeta-pedido-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 26px;
+    border-bottom: 1px solid #e4edf0;
+    background: #f8fbfc;
+}
+
+.tarjeta-pedido-header .numero {
+    font-family: monserrat, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #164b6b;
+}
+
+.tarjeta-pedido-header .fecha {
+    font-size: 13px;
+    color: #6b7e88;
+}
+
+.etiqueta-estado {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.etiqueta-estado.pendiente {
+    background: #fdecd2;
+    color: #9a6100;
+}
+
+.etiqueta-estado.confirmado {
+    background: #dff3e7;
+    color: #2d8a55;
+}
+
+.tarjeta-pedido-productos {
+    padding: 18px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.item-pedido {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.item-pedido-imagen {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fffaf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-pedido-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-pedido-imagen .sin-imagen {
+    font-size: 22px;
+    color: #164b6b;
+}
+
+.item-pedido-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-pedido-info h3 {
+    font-size: 15.5px;
+    margin-bottom: 3px;
+}
+
+.item-pedido-info small {
+    color: #6b7e88;
+}
+
+.item-pedido-precio {
+    font-weight: 700;
+    color: #164b6b;
+    white-space: nowrap;
+}
+
+.tarjeta-pedido-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 26px;
+    border-top: 1px solid #e4edf0;
+    background: #f8fbfc;
+    font-family: monserrat, sans-serif;
+}
+
+.tarjeta-pedido-footer .metodo {
+    font-size: 13px;
+    color: #6b7e88;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tarjeta-pedido-footer .total {
+    font-size: 19px;
+    font-weight: 700;
+    color: #164b6b;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 30px;
+    padding: 35px;
+    background: #154d69;
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: monserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-logo span {
+    color: white;
+}
+
+footer p {
+    margin: 8px 0 15px;
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+footer small {
+    opacity: 0.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+    .navbar nav {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .tarjeta-pedido-header,
+    .tarjeta-pedido-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

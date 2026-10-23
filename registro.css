@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+   FONDO GENERAL
+========================= */
+
+.registro-pagina {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #e8f7fc,
+        #fff8ed
+    );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.registro-contenedor {
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 650px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.registro-info {
+    background: linear-gradient(
+        160deg,
+        #247ba5,
+        #15506d
+    );
+
+    color: white;
+
+    padding: 50px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.logo {
+    width: 90px;
+    height: 90px;
+
+    background: rgba(255,255,255,0.18);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+
+    margin-bottom: 25px;
+}
+
+
+.registro-info h1 {
+    font-family: monserrat, sans-serif;
+
+    font-size: 60px;
+
+    font-weight: 600;
+}
+
+
+.registro-info h1 span {
+    color: #f3a832;
+}
+
+
+.registro-info h2 {
+    margin-top: 18px;
+
+    font-size: 30px;
+}
+
+
+.registro-info p {
+    margin-top: 15px;
+
+    max-width: 320px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.formulario {
+    padding: 45px 55px;
+
+    overflow-y: auto;
+}
+
+
+.titulo-formulario {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.titulo-formulario > span {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #247ba5;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 23px;
+}
+
+
+.titulo-formulario h2 {
+    color: #154d69;
+
+    font-size: 27px;
+}
+
+
+.titulo-formulario p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-registro {
+    margin-bottom: 15px;
+}
+
+
+.campo-registro label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #154d69;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.campo-registro input,
+.campo-registro select {
+
+    width: 100%;
+
+    height: 47px;
+
+    border: 2px solid #dedede;
+
+    border-radius: 10px;
+
+    padding: 0 14px;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    background: #fafafa;
+
+    transition: 0.3s;
+}
+
+
+.campo-registro input:focus,
+.campo-registro select:focus {
+
+    border-color: #247ba5;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(36,123,165,0.1);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.btn-crear {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #247ba5;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+
+    transition: 0.3s;
+}
+
+
+.btn-crear:hover {
+
+    background: #17688f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.volver {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+.volver a {
+
+    color: #247ba5;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    margin-left: 5px;
+}
+
+
+.volver a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .registro-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .registro-info {
+        padding: 35px 25px;
+    }
+
+    .registro-info h1 {
+        font-size: 40px;
+    }
+
+    .registro-info h2 {
+        font-size: 25px;
+    }
+
+    .decoracion-comida {
+        margin-top: 20px;
+    }
+
+    .formulario {
+        padding: 35px 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .registro-pagina {
+        padding: 15px;
+    }
+
+    .formulario {
+        padding: 30px 20px;
+    }
+
+    .registro-info {
+        padding: 30px 20px;
+    }
+
+}
+
+/* =========================
+   REQUISITOS CONTRASEÑA
+========================= */
+
+/* Ocultos por defecto */
+.lista-requisitos{
+    display: none;
+    margin-top: 10px;
+    padding: 12px;
+    background: #f8f9fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+}
+
+.titulo-requisitos{
+    font-weight: 600;
+    color: #154d69;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.requisitos{
+    color: #555;
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+/* Mostrar cuando se hace clic en la contraseña */
+.password-contenedor:focus-within .lista-requisitos{
+    display: block;
+}
+
+.mensaje-error{
+    color: #d62828;
+    font-size: 13px;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.mensaje-correcto{
+    color: #2a9d8f;
+}
+
+
+
+/* OJO PARA VER CONTRASEÑA */
+.input-ojo { position: relative; }
+.input-ojo input { padding-right: 45px; }
+.ojo-registro {
+    position: absolute; right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: #586873; font-size: 18px; cursor: pointer; user-select: none;
+}
+.ojo-registro:hover { color: #154d69; }

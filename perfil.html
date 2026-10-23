@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi perfil | EDULUNCH</title>
+
+    <link rel="stylesheet" href="perfil.css">
+
+    <link rel="stylesheet" href="campana.css">
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Edu<span>Lunch</span>
+        </div>
+
+
+        <nav>
+
+            <a href="menu.html">Inicio</a>
+
+            <a href="menu.html#categorias">Productos</a>
+
+            <a href="carrito.html">Mi carrito</a>
+
+        </nav>
+
+
+        <div class="usuario-menu">
+
+            <span class="avatar-pequeno">
+                옷
+            </span>
+
+            <span id="nombreNavbar">
+                Usuario
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="perfil">
+
+        <section class="bienvenida">
+
+            <div>
+
+                <span class="etiqueta">
+                    MI CUENTA
+                </span>
+
+                <h1>
+                    ¡Hola,
+                    <span id="nombreUsuario">
+                        Usuario
+                    </span>!
+                </h1>
+
+                <p>
+                    Bienvenido a tu espacio personal
+                    de EduLunch.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMACIÓN DEL PERFIL
+        ========================== -->
+
+        <section class="perfil-contenedor">
+
+
+            <div class="tarjeta-perfil">
+
+                <div class="avatar">
+                    옷
+                </div>
+
+
+                <h2 id="nombrePerfil">
+                    Usuario
+                </h2>
+
+
+                <p id="correoPerfil">
+                    usuario@correo.com
+                </p>
+
+
+                <span class="rol">
+                    Estudiante
+                </span>
+
+                <!-- Solo se puede editar nombre y correo (nunca el rol) -->
+                <button type="button" class="btn-editar" id="btnEditarDatos">
+                    ✎ Editar datos
+                </button>
+
+            </div>
+
+
+
+            <div class="informacion">
+
+                <h2>
+                    Información de mi cuenta
+                </h2>
+
+
+                <div class="dato">
+
+                    <span>
+                        옷
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Nombre completo
+                        </small>
+
+                        <strong id="nombreCompleto">
+                            Usuario
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dato">
+
+                    <span>
+                        ✉
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Correo institucional
+                        </small>
+
+                        <strong id="correoInstitucional">
+                            usuario@correo.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dato">
+
+                    <span>
+                        ✮
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Rol
+                        </small>
+
+                        <strong id="rolCuenta">
+                            Estudiante
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dato">
+
+                    <span>
+                        ☀︎
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Estado de cuenta
+                        </small>
+
+                        <strong class="activo">
+                            ● Cuenta activa
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ACCIONES
+        ========================== -->
+
+        <section class="acciones-perfil">
+
+            <div class="accion">
+
+                <div>
+                    🍔
+                </div>
+
+                <h3>
+                    Ver productos
+                </h3>
+
+                <p>
+                    Mira los productos disponibles
+                    en la cafetería.
+                </p>
+
+                <button>
+                    Ver productos →
+                </button>
+
+            </div>
+
+
+
+            <div class="accion">
+
+                <div>
+                    📋
+                </div>
+
+                <h3>
+                    Mis pedidos
+                </h3>
+
+                <p>
+                    Consulta tus pedidos realizados.
+                </p>
+
+                <button>
+                    Ver pedidos →
+                </button>
+
+            </div>
+
+
+
+            <!-- Solo visible para administradores (la muestra perfil.js) -->
+            <div class="accion" id="accionPanelAdmin" hidden>
+
+                <div>
+                    🛡️
+                </div>
+
+                <h3>
+                    Panel de administrador
+                </h3>
+
+                <p>
+                    Gestiona productos y revisa las estadísticas del negocio.
+                </p>
+
+                <button id="btnIrPanelAdmin">
+                    Ir al panel →
+                </button>
+
+            </div>
+
+            <!-- CERRAR SESIÓN -->
+
+            <div class="accion cerrar">
+
+                <div>
+                    🚪
+                </div>
+
+                <h3>
+                    Cerrar sesión
+                </h3>
+
+                <p>
+                    Sal de tu cuenta de EDULUNCH
+                    de forma segura.
+                </p>
+
+                <button
+                    id="btnCerrarSesion"
+                >
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Edu<span>Lunch</span>
+        </div>
+
+        <p>
+            Cafetería escolar fácil, rápida y deliciosa.
+        </p>
+
+        <small>
+            © 2026 EDULUNCH
+            
+            <P> 
+                .NSMAV.
+            </P>
+        </small>
+
+    </footer>
+
+
+    <!-- =========================
+         VENTANA: EDITAR DATOS
+    ========================== -->
+
+    <div class="modal-editar" id="modalEditar" hidden>
+        <div class="modal-editar-caja">
+
+            <h2>Editar mis datos</h2>
+
+            <label for="editNombre">Nombre</label>
+            <input type="text" id="editNombre" maxlength="50" autocomplete="off">
+
+            <label for="editCorreo">Correo institucional</label>
+            <input type="email" id="editCorreo" maxlength="100" autocomplete="off">
+
+            <label for="editRol">Rol</label>
+            <input type="text" id="editRol" disabled>
+            <small class="nota-rol">El rol no se puede cambiar.</small>
+
+            <p class="edit-mensaje" id="editMensaje" hidden></p>
+
+            <div class="edit-botones">
+                <button type="button" class="edit-cancelar" id="btnCancelarEditar">Cancelar</button>
+                <button type="button" class="edit-guardar" id="btnGuardarEditar">Guardar cambios</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="perfil.js"></script>
+
+<script src="auth.js"></script>
+<script src="campana.js"></script>
+<script src="tienda.js"></script>
+</body>
+
+</html>

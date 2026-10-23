@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLunch - Mi carrito</title>
+
+    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="campana.css">
+</head>
+
+<body>
+
+<div class="pagina">
+
+    <header>
+        <div class="logo">Edu<span>Lunch</span></div>
+
+        <nav>
+            <a href="menu.html">Inicio</a>
+            <a href="fritos.html">Fritos</a>
+            <a href="snacks.html">Snacks</a>
+            <a href="bebidas.html">Bebidas</a>
+            <a href="HeladosFR.html">Frutas y Helados</a>
+        </nav>
+
+        <a class="icono carrito" href="carrito.html" aria-label="Carrito">🛒︎<div class="numero contador-carrito">0</div></a>
+    </header>
+
+    <section class="encabezado">
+        <a href="menu.html" class="volver"><span>←</span> Seguir comprando</a>
+        <h1>Mi carrito</h1>
+        <p>Revisa tus productos y confirma tu pedido.</p>
+    </section>
+
+    <section class="contenido">
+
+        <!-- LISTA DE PRODUCTOS (la pinta tienda.js con renderCarrito) -->
+        <div id="listaCarrito">
+            <div class="carrito-vacio">Cargando tu carrito…</div>
+        </div>
+
+        <!-- RESUMEN Y PAGO -->
+        <aside class="resumen">
+            <h2>Resumen del pedido</h2>
+
+            <div class="fila-total">
+                <span>Total</span>
+                <strong id="totalCarrito">$0</strong>
+            </div>
+
+            <label class="metodo">
+                <input type="radio" name="metodoPago" value="transferencia" checked>
+                Transferencia Bancolombia
+            </label>
+
+            <div class="datos-pago" id="datosTransferencia">
+                <!-- >>> CAMBIA ESTOS DATOS POR LOS REALES <<< -->
+                <strong>Banco:</strong> Bancolombia<br>
+                <strong>Cuenta de ahorros:</strong> 31194047391 <br>
+                <strong>Titular:</strong> Juan Manuel Molina
+            </div>
+
+            <p class="paso">1. Haz la transferencia por el total.</p>
+            <p class="paso">2. Sube la foto de tu comprobante de pago.</p>
+
+            <!-- SUBIR COMPROBANTE (lo maneja comprobante.js) -->
+            <input type="file" id="inputComprobante" accept="image/jpeg,image/png,image/webp" hidden>
+            <button type="button" class="btn-comprobante" id="btnSubirComprobante">
+                <i class="fa-solid fa-upload"></i> Subir comprobante de pago
+            </button>
+            <div class="comprobante-estado" id="estadoComprobante" hidden></div>
+            <img class="mini-comprobante" id="miniComprobante" alt="Comprobante subido" hidden>
+
+            <p class="paso">3. Confirma tu pedido y avísanos por WhatsApp.</p>
+            <!-- Deshabilitado hasta que se suba el comprobante -->
+            <button type="button" class="btn-whatsapp" id="btnConfirmarPedido" onclick="confirmarYEnviarWhatsApp()" disabled>
+                <i class="fa-brands fa-whatsapp"></i> Confirmar y enviar por WhatsApp
+            </button>
+        </aside>
+
+    </section>
+
+</div>
+
+<!-- MODAL: PEDIDO CONFIRMADO -->
+<div class="modal-confirmacion oculto" id="modalConfirmacion">
+    <div class="modal-caja">
+        <div class="modal-icono">✓</div>
+        <h2>¡Pedido confirmado!</h2>
+        <p>Tu número de turno es</p>
+        <div class="modal-turno" id="modalNumeroTurno">—</div>
+        <p id="modalErrorTurno" style="color:#c0392b;font-size:13px;margin:-10px 0 16px;"></p>
+        <button type="button" id="btnCerrarModalConfirmacion">Aceptar</button>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="campana.js"></script>
+<script src="comprobante.js"></script>
+<script src="tienda.js"></script>
+
+</body>
+</html>

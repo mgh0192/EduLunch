@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduLunch | Cafetería Escolar</title>
+
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="campana.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+     <!-- VENTANA DE BIENVENIDA -->
+<div id="ventanaBienvenida" class="ventana-bienvenida ocultar">
+
+    <div class="bienvenida-contenido">
+
+        <!-- IMAGEN -->
+        <img
+            src="img/b2.png"
+            class="fondo-bienvenida"
+            alt="Bienvenida EDULUNCH"
+        >
+
+        <!-- BOTÓN X -->
+        <button
+            id="cerrarBienvenida"
+            class="cerrar-bienvenida"
+            onclick="document.getElementById('ventanaBienvenida').style.display='none'">
+            ×
+        </button>
+
+        <!-- TEXTO -->
+        <div class="bienvenida-texto">
+
+            <h2>¡Bienvenido a EDULUNCH!</h2>
+
+            <h3 id="nombreBienvenida"></h3>
+
+            <p>
+                Nos alegra tenerte aquí. Encuentra tus productos favoritos,
+                disfruta tu descanso y descubre todo lo que tenemos para ti.
+            </p>
+
+        </div>
+    </div>
+
+        <!-- CONTINUAR -->
+        <button
+            id="continuarBienvenida"
+            class="boton-continuar"
+            onclick="document.getElementById('ventanaBienvenida').style.display='none'">
+            Continuar
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+    ========================== -->
+
+    <header class="navbar">
+    <div class="logo">
+        <div> 
+          Edu<span>Lunch</span>
+        </div>
+    </div>
+    <nav>
+        <a href="menu.html">Inicio</a>
+        <a href="fritos.html">Fritos</a>
+        <a href="snacks.html">Snacks</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="HeladosFR.html">Frutas y Helados</a>
+    </nav>
+    <div class="nav-derecha">
+        <a href="carrito.html" class="carrito" aria-label="Carrito">
+            <i class="fa-solid fa-cart-shopping"></i><small class="contador-carrito">0</small>
+        </a>
+        <a href="perfil.html" class="cuenta">
+            <i class="fa-solid fa-circle-user"></i><span>Mi cuenta</span><i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </div>
+</header>
+
+
+
+    <!-- =========================
+         BANNER
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-texto">
+
+            <h1>¡Bienvenido!</h1>
+
+            <p>
+                Disfruta de los mejores productos
+                de nuestra cafetería escolar.
+            </p>
+
+            <a href="#categorias" class="boton-menu">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                Ver menú
+
+            </a>
+            
+        </div>
+
+        <div class="hero-imagen">
+
+            <img src="img/menu principal.png" alt="">
+            
+        </div>
+    </section>
+
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+
+    <main id="categorias" class="categorias">
+
+        <div class="titulo">
+
+            <h2>Nuestras Categorías</h2>
+
+        </div>
+
+
+
+        <div class="categorias-grid">
+
+
+            <!-- =====================
+                 FRITOS
+            ====================== -->
+
+            <article class="categoria-card">
+
+                <div class="categoria-imagen">
+                    <img src="img/perro menu.png" alt="">
+                </div>
+
+                <h3>Fritos</h3>
+
+                <p>
+                    Crujientes, calienticos y llenos
+                    de sabor.
+                </p>
+
+                <a href="fritos.html">
+
+                    Ver productos
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =====================
+                 SNACKS
+            ====================== -->
+
+            <article class="categoria-card">
+
+                <div class="categoria-imagen">
+                    <img src="img/snack menu.png" alt="">
+                </div>
+
+                <h3>Snacks</h3>
+
+                <p>
+                    Pequeños antojos, grandes momentos 
+                    de sabor.
+                </p>
+
+                <a href="snacks.html">
+
+                    Ver productos
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =====================
+                 BEBIDAS
+            ====================== -->
+
+            <article class="categoria-card">
+
+                <div class="categoria-imagen">
+                    <img src="img/bebidas menu.png" alt="">
+                </div>
+
+                <h3>Bebidas</h3>
+
+                <p>
+                    Refrescantes, deliciosas y perfectas
+                    para ti.
+                </p>
+
+                <a href="bebidas.html">
+
+                    Ver productos
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =====================
+                 SALUDABLES
+            ====================== -->
+
+            <article class="categoria-card">
+
+                <div class="categoria-imagen">
+                    <img src="img/helado menu.png" alt="">
+                </div>
+
+                <h3>Frutas y Helados</h3>
+
+                <p>
+                    fresco, ligero y delicioso
+                    para disfrutar.
+                </p>
+
+                <a href="HeladosFR.html">
+
+                    Ver productos
+                </a>
+
+            </article>
+
+        </div>
+
+
+    </main>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-marca">
+
+            <h2>
+                EduLunch
+            </h2>
+
+            <span>Cafetería Escolar</span>
+
+            <p>
+                Alimentamos tu día,
+                impulsamos tu futuro.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h3>Contáctanos</h3>
+
+            <p>
+                <span>☎</span>
+                +57 324 399 4212
+            </p>
+
+            <p>
+                <span>✉</span>
+               edulunch@gmail.com
+            </p>
+
+            <p>
+                <span>◎</span>
+                Cafetería escolar
+            </p>
+
+
+        </div>
+
+
+
+        <div class="footer-col">
+
+            <h3>Redes</h3>
+
+            <div class="redes">
+
+                <a href="https://instagram.com/edulunch_">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://facebook.com/edulunch">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://wa.me/573243994212">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 EduLunch - Cafetería Escolar.
+            Todos los derechos reservados.
+
+            
+             <P> 
+                .NSMAV.
+            </P>
+
+        </div>
+
+    </footer>
+
+
+<script src="auth.js"></script>
+<script src="campana.js"></script>
+<script src="tienda.js"></script>
+</body>
+
+</html>
